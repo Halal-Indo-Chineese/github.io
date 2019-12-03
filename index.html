@@ -24,20 +24,23 @@
 		<div class="container">
 			<div class="row">
 				<div class="col">
-					<div class="header_content d-flex flex-row align-items-center justify-content-start">
+					<div class="header_content d-flex flex-row align-items-left justify-content-start">
 						<div class="header_content_inner d-flex flex-row align-items-end justify-content-start">
 							
-							<div class="logo"><a href="index.html"><span lang=EL style='font-size:30pt;line-height:107%;color:red'>&#931;</span>igma Airlines</a></div>
 							
+							<div class="logo"><a href="index.html"><span lang=EL style='font-size:30pt;line-height:107%;color:red'>&#931;</span>igma Airlines</a></div>
 							<nav class="main_nav">
-								<ul class="d-flex flex-row align-items-start justify-content-start">
+								<ul class="d-flex flex-row align-items-start">
 									<li class="active"><a href="index.html">Home</a></li>
+									<li><a href="schedule.html">Flight Schedule</a></li>
 									<li><a href="sigmiles.html">Σigmiles</a></li>
-									<li><a href="jobs.html">Careers</a></li>
+									<li><a href="careers.html">Careers</a></li>
 									<li><a href="about.html">About us</a></li>
-									<li><a href="contact.html">Contact</a></li>
-									<li class="menu_social"><a href="#"> Sign Up</a></li>
-									<li class="menu_social"><a href="#">Login</a></li>
+									<li><a href="contact.html">Contact</a></li>			
+									<li><a href data-toggle="modal" data-target="#loginModal"><i class="fa fa-user before"></i>Login</a></li>
+									<li><a href="register.php"><i class="fa fa-user-plus before"></i>Sign-up</a></li>
+										
+									
 								</ul>
 							</nav>
 							
@@ -66,29 +69,18 @@
 		<div class="menu_content">
 			<ul>
 				<li><a href="index.html">Home</a></li>
+				<li><a href="schedule.html">Flight Schedules</a></li>
 				<li><a href="sigmiles.html">Σigmiles</a></li>
-				<li><a href="jobs.html">Careers</a></li>
+				<li><a href="careers.html">Careers</a></li>
 				<li><a href="about.html">About us</a></li>
 				<li><a href="contact.html">Contact</a></li> 
-				<li class="menu_social"><a href="#">Sign Up</a></li>
-				<li class="menu_social"><a href="#">Login</a></li>
+				<li><a href data-toggle="modal" data-target="#loginModal"><i class="fa fa-user before"></i>Login</a></li>
+				<li><a href="register.php"><i class="fa fa-user-plus before"></i>Sign-up</a></li>
 			</ul>
 			
 		</div>
 		
-		<!--
-		<div class="menu_social">
-			<div class="menu_phone ml-auto">Call us: 800 100 1234</div>
-			<ul class="d-flex flex-row align-items-start justify-content-start">
-				<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-			</ul>
-		</div>
-		-->
+		
 	</div>
 	
 	<!-- Home -->
@@ -168,12 +160,28 @@
 					<div class="home_search_container">
 						<div class="home_search_title">Plan your next trip</div>
 						<div class="home_search_content">
-							<form action="#" class="home_search_form" id="home_search_form">
+							<form method="post" action="search.php" class="home_search_form" id="home_search_form">
 								<div class="d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
-									<input type="text" class="search_input search_input_1" placeholder="Depart" required="required">
-									<input type="text" class="search_input search_input_2" placeholder="Arrive" required="required">
-									<input type="Number" class="search_input search_input_3" placeholder="# Seats" required="required">
-									<input type="Date" class="search_input search_input_4" placeholder="Date" required="required">
+					
+									<select id="From" name="From" class="search_input search_input_1"  required="required" size=1>
+										<option value="CLT">Charlotte</option>
+										<option value="MIA">Miami</option>
+										<option value="NYC">New York</option>
+										<option value="PHL" selected >Philadelphia</option>
+										<option value="PWM">Portland</option>
+										<option value="SFO">San Fransico</option>
+									</select>
+									
+									<select id="To" name="To" class="search_input search_input_2"  required="required" size=1>
+										<option value="CLT">Charlotte</option>
+										<option value="MIA" selected>Miami</option>
+										<option value="NYC">New York</option>
+										<option value="PHL">Philadelphia</option>
+										<option value="PWM">Portland</option>
+										<option value="SFO">San Fransico</option>
+									</select>
+									<input id="seats" name="seats" type="Number" class="search_input search_input_3" placeholder="# Seats" required="required" value="1" min="1" max="15">
+									<input id="tdate" name="tdate" type="Date" class="search_input search_input_4" required="required" min="2019-12-01" max="2020-03-31" >
 									<button class="home_search_button">search</button>
 								</div>
 							</form>
@@ -252,7 +260,7 @@
 								<div class="spec_offer text-center"><a href="#">Special Offer</a></div>
 							</div>
 							<div class="destination_content">
-								<div class="destination_title"><a href="destinations.html">North Carolina</a></div>
+								<div class="destination_title"><a href="destinations.html">Charlotte</a></div>
 								<div class="destination_price">From $39</div>
 							</div>
 						</div>
@@ -263,7 +271,7 @@
 								<img src="images/PM.jpg" alt="">
 							</div>
 							<div class="destination_content">
-								<div class="destination_title"><a href="destinations.html">Portland, Maine</a></div>
+								<div class="destination_title"><a href="destinations.html">Portland</a></div>
 								<div class="destination_price">From $59</div>
 							</div>
 						</div>
@@ -355,17 +363,18 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-xl-4 footer_contact_col">
-						<div class="footer_contact_item d-flex flex-row align-items-center justify-content-start text-center">
+					<div class="footer_contact_row">
+						<div class="footer_contact_item d-flex flex-column align-items-center justify-content-start text-center">
 						    <div class="footer_contact_title">Find Us On</div>
-							<div class="footer_contact_icon">
-									<li><a href="https://www.facebook.com/"><i class="fa fa-facebook-official w3-hover-opacity"></i></a></li>
-									<li><a href="https://www.instagram.com/"><i class="fa fa-instagram w3-hover-opacity"></i></a></li>
-									<li><a href="https://twitter.com/login"><i class="fa fa-twitter w3-hover-opacity"></i></a></li>
-									<li><a href="https://www.linkedin.com/login?fromSignIn=true&trk=guest_homepage-basic_nav-header-signin"><i class="fa fa-linkedin w3-hover-opacity"></i></a></li>
-							</div>	
+								<div class="footer_social">
+									<a href="https://www.facebook.com/"><i class="fa fa-facebook-official"></i></a>
+									<a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a>
+									<a href="https://twitter.com/login"><i class="fa fa-twitter"></i></a>
+									<a href="https://www.linkedin.com/login?fromSignIn=true&trk=guest_homepage-basic_nav-header-signin"><i class="fa fa-linkedin"></i></a>
+								</div>
 						</div>
 					</div>	
+					
 
 					
 				</div>
@@ -375,7 +384,44 @@
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> </div>
 	</footer>
-</div>
+
+
+  <div id="loginModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header" style="padding:35px 50px;">
+          <h4><i class="fa fa-user"></i> Login</h4> 
+		 <button type="button" class="close" data-dismiss="modal">&times;</button>
+         
+        </div>
+        <div class="modal-body" style="padding:40px 50px;">
+          <form role="form">
+            <div class="form-group">
+              <label for="usrname">Username</label>
+              <input type="text" class="form-control" id="usrname" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label for="psw">Password</label>
+              <input type="text" class="form-control" id="psw" placeholder="Enter password">
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="" checked>Remember me</label>
+            </div>
+              <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <p>Forgot <a href="#">Password?</a></p>
+		  <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">Cancel</button>
+		  
+        </div>
+      </div>
+      
+    </div>
+  </div> 
+
 
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="styles/bootstrap4/popper.js"></script>

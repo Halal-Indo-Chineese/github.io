@@ -1150,3 +1150,53 @@ section
 {
 	margin-bottom: 7px;
 }
+.table1 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+  border-collapse: collapse;
+  width: 80%;
+  color: #FFFFFF;
+}
+.table1.td, .table1.th {
+  border: 5px solid white;
+  text-align: left;
+  padding : 8px 8px;
+  color: #FFFFFF;
+  display : table-cell;
+}
+.table1 th:first-child, .table1 td:first-child{
+padding-left : 16px;
+}	
+.table1 tr:nth-child(even) {
+  background-color: #dddddd;
+}
+.table1 tr:hover {
+	background-color: #ddd;
+}
+.fa-facebook {
+	background:#3b5998;
+} 
+.fa-linkedin {
+	background:#007bb6;
+}
+.fa-twitter {
+	background:#00aced;
+}
+.footer_social
+{
+	margin-top: 18px;
+	font-size: 42px;
+}
+.footer_social a li i{
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+    font-size: 36px;
+    text-align: center;
+    margin-right: 10px;
+    padding-top: 15%;
+    transition: all 0.2s ease-in-out;
+}
+.footer_social a:hover {
+       color: red;
+}

@@ -1149,3 +1149,30 @@ section
 {
 	margin-bottom: 7px;
 }
+.fa-facebook {
+	background:#3b5998;
+} 
+.fa-linkedin {
+	background:#007bb6;
+}
+.fa-twitter {
+	background:#00aced;
+}
+.footer_social
+{
+	margin-top: 18px;
+	font-size: 42px;
+}
+.footer_social a li i{
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+    font-size: 36px;
+    text-align: center;
+    margin-right: 10px;
+    padding-top: 15%;
+    transition: all 0.2s ease-in-out;
+}
+.footer_social a:hover {
+       color: red;
+}

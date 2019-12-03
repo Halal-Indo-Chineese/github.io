@@ -639,8 +639,8 @@ section
 {
 	position: absolute;
 	top: -339px;
-	width: calc(100% + 122px);
-	left: -61px;
+	width: calc(40% + 122px);
+	left: 250px;
 	padding-top: 47px;
 	padding-left: 61px;
 	padding-right: 61px;
@@ -1086,4 +1086,65 @@ section
 .footer_contact_list ul li:not(:last-child)
 {
 	margin-bottom: 7px;
+}
+/*********************************
+7. About
+*********************************/
+
+.about
+{
+	width: 100%;
+	background: #FFFFFF;
+	padding-top: 115px;
+}
+.about_row
+{
+	margin-top: 5px;
+	font-size: 18px;
+}
+.about_content
+{
+	width: 100%;
+	margin-top: -7px;
+}
+.text_highlight
+{
+	font-size: 18px;
+	font-weight: 700;
+	color: #181818;
+	line-height: 1.66;
+}
+.about_text
+{
+	margin-top: 15px;
+	color : #181818
+}
+.about_button
+{
+	margin-top: 67px;
+}
+.about_image
+{
+	width: 100%;
+}
+.about_image img
+{
+	max-width: 100%;
+}
+
+.footer_social a li i{
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+    font-size: 36px;
+    text-align: center;
+    margin-right: 10px;
+    padding-top: 15%;
+    transition: all 0.2s ease-in-out;
+}
+.footer_social a:hover {
+       color: red;
+}
+.section_subtitle a:hover {
+       color: red;
 }

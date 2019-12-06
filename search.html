@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Book Flight</title>
+<title>Search</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Travello template project">
@@ -11,12 +11,12 @@
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
-<link rel="stylesheet" type="text/css" href="styles/book.css">
+<link rel="stylesheet" type="text/css" href="styles/search.css">
 <link rel="stylesheet" type="text/css" href="styles/about_responsive.css">
 
 <!-- head stuff -->
 <script type="text/javascript">
-<!-- hide from old browsers
+<!-- hide from old browsers html?booktype=Round+Trip&From=PHL&To=MIA&seats=1&tdate=2019-12-05&rdate=2019-12-13
 
 function getValue(varname)
 {
@@ -71,10 +71,12 @@ function getValue(varname)
 // end hide -->
 </script>
 
+
+
+
 </head>
-
-
 <body>
+
 <div class="super_container">
 	
 	<!-- Header -->
@@ -90,12 +92,12 @@ function getValue(varname)
 							
 							<nav class="main_nav">
 								<ul class="d-flex flex-row align-items-start justify-content-start">
-									<li><a href="index.html">Home</a></li>
-									<li class="active"><a href="schedule.html">Flight Schedule</a></li>
+									<li class="active"><a href="index.html">Home</a></li>
+									<li><a href="schedule.html">Flight Schedule</a></li>
 									<li><a href="sigmiles.html">Σigmiles</a></li>
 									<li><a href="careers.html">Careers</a></li>
 									<li><a href="about.html">About us</a></li>
-									<li><a href="contact.html">Contact</a></li>
+									<li><a href="contact.html">Contact</a></li>			
 									<li><a href data-toggle="modal" data-target="#loginModal"><i class="fa fa-user before"></i>Login</a></li>
 									<li><a href="register.php"><i class="fa fa-user-plus before"></i>Sign-up</a></li>
 								</ul>
@@ -126,6 +128,7 @@ function getValue(varname)
 		<div class="menu_content">
 			<ul>
 				<li><a href="index.html">Home</a></li>
+				<li><a href="schedule.html">Flight Schedules</a></li>
 				<li><a href="sigmiles.html">Σigmiles</a></li>
 				<li><a href="careers.html">Careers</a></li>
 				<li><a href="about.html">About us</a></li>
@@ -142,249 +145,183 @@ function getValue(varname)
 	<div class="home">
 	
 		<div class="background_image" style="background-image:url(images/sky1.jpg)"></div>
-			
-	
-		<div class="home_search">
-			<div class="container">
-				<div class="row">
-					<div class="col"> 
-						<div class="home_search_container">
-							<div class="home_search_content">
-
-								<div class="container margin_60">
-									<div class="row">
-										<div class="col-xl-8 col-lg-8">
-											<div class="box_general_3 cart">
+	</div>
+	<div class="intro">
+		<div class="intro_background" style="background-image:url(images/intro.png)">
+		<!--<div class="home_search_title">Plan your next trip</div> -->
+						<div class="home_search_content">
+						
+							<form method="post" action="search.php" class="home_search_form" id="home_search_form1">
+							    
+								<div class="d-flex flex-lg-row align-items-start">
+									<div class="col"><input type="radio" onclick="javascript:btcheck();" name="booktype" id="ow" value="One Way" > OneWay </div>
+									<div class="col"><input type="radio" onclick="javascript:btcheck();" name="booktype" id="rt" value="Round Trip" checked > RoundTrip </div>
+									
+									<div class="col"></div> <div class="col"></div>
+								</div>	
+								<div class="d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
+								<span class="search_input_1">Origin</span>
+								<span class="search_input_2">Destination</span>
+								<span class="search_input_3">#Seats</span>
+								<span class="search_input_4">Start Date</span>
+								<span id="lrdt" class="search_input_5">Return Date</span>
+								<span class="search_input_4"></span>
+								</div>
+								<div class="d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
 					
-												<div class="form_title">
-													<h3><strong>1</strong>Your Details</h3>
-												</div>
-												<div class="step">
-													<div class="row">
-														<div class="col-md-6 col-sm-6">
-															<div class="form-group">
-																<label>First name</label>
-																<input type="text" class="form-control" id="firstname_booking" name="firstname_booking" placeholder="First">
-															</div>
-														</div>
-														<div class="col-md-6 col-sm-6">
-														<div class="form-group">
-															<label>Last name</label>
-															<input type="text" class="form-control" id="lastname_booking" name="lastname_booking" placeholder="Last">
-														</div>
-													</div>
-													</div>
-													<div class="row">
-														<div class="col-md-6 col-sm-6">
-															<div class="form-group">
-																<label>Email</label>
-																<input type="email" id="email_booking" name="email_booking" class="form-control" placeholder="userid@email.com">
-															</div>
-														</div>
-														<div class="col-md-6 col-sm-6">
-															<div class="form-group">
-																<label>Confirm email</label>
-																<input type="email" id="email_booking_2" name="email_booking_2" class="form-control" placeholder="userid@email.com">
-															</div>
-														</div>
-													</div>
-													<div class="row">
-														<div class="col-md-6 col-sm-6">
-															<div class="form-group">
-																<label>Telephone</label>
-																<input type="text" id="telephone_booking" name="telephone_booking" class="form-control" placeholder="(123) 456-7890">
-															</div>
-														</div>
-													</div>
-												</div>
-												<hr>
-												<!--End step -->
-
-													<div class="form_title">
-														<h3><strong>2</strong>Payment Information</h3>
-														
-													</div>
-													<div class="step">
-														<div class="form-group">
-															<label>Name on card</label>
-															<input type="text" class="form-control" id="name_card_booking" name="name_card_booking" placeholder="Sigma Pilot">
-														</div>
-														<div class="row">
-															<div class="col-md-6">
-																<div class="form-group">
-																	<label>Card number</label>
-																	<input type="text" id="card_number" name="card_number" class="form-control" placeholder="xxxx - xxxx - xxxx - xxxx">
-																</div>
-															</div>
-															<div class="col-md-6 col-sm-6">
-																<img src="images/payments.png" alt="Cards" class="cards">
-															</div>
-														</div>
-														<div class="row">
-															<div class="col-md-6">
-																<label>Expiration date</label>
-																<div class="row">
-																	<div class="col-md-6">
-																		<div class="form-group">
-																			<input type="text" id="expire_month" name="expire_month" class="form-control" placeholder="MM">
-																		</div>
-																	</div>
-																	<div class="col-md-6">
-																		<div class="form-group">
-																			<input type="text" id="expire_year" name="expire_year" class="form-control" placeholder="Year">
-																		</div>
-																	</div>
-																</div>
-															</div>
-															<div class="col-md-6">
-																<div class="form-group">
-																	<label>Security code</label>
-																	<div class="row">
-																		<div class="col-md-4">
-																			<div class="form-group">
-																				<input type="text" id="ccv" name="ccv" class="form-control" placeholder="CCV">
-																			</div>
-																		</div>
-																		<div class="col-md-8">
-																			<img src="images/icon_ccv.gif" width="50" height="29" alt="ccv"><small>Last 3 digits</small>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-														<!--End row -->
-
-														<h5>Or checkout with Paypal</h5>
-														
-														<p>
-															<img src="images/paypal_bt.png" alt="Image">
-														</p>
-													</div>
-													<hr>
-													<!--End step -->
-
-													<div class="form_title">
-														<h3><strong>3</strong>Billing Address</h3>
-														
-													</div>
-													<div class="step">
-														
-														<div class="row">
-															<div class="col-md-6 col-sm-6">
-																<div class="form-group">
-																	<label>Street line 1</label>
-																	<input type="text" id="street_1" name="street_1" class="form-control" placeholder="Street line 1">
-																</div>
-															</div>
-															<div class="col-md-6 col-sm-6">
-																<div class="form-group">
-																	<label>Street line 2</label>
-																	<input type="text" id="street_2" name="street_2" class="form-control" placeholder="Street line 1">
-																</div>
-															</div>
-														</div>
-														<div class="row">
-															<div class="col-md-6">
-																<div class="form-group">
-																	<label>City</label>
-																	<input type="text" id="city_booking" name="city_booking" class="form-control" placeholder="Lansdale">
-																</div>
-															</div>
-															<div class="col-md-3">
-																<div class="form-group">
-																	<label>State</label>
-																	<input type="text" id="state_booking" name="state_booking" class="form-control" placeholder="PA">
-																</div>
-															</div>
-															<div class="col-md-3">
-																<div class="form-group">
-																	<label>Postal code</label>
-																	<input type="text" id="postal_code" name="postal_code" class="form-control" placeholder="19446">
-																</div>
-															</div>
-														</div>
-														<!--End row -->
-													</div>
-													<hr>
-													<!--End step -->
-													<div id="policy">
-						<h4>Cancellation policy</h4>
-						<div class="form-group">
-							<div class="checkboxes">
-								<label class="container_check">I accept <a href="#0">terms and conditions and general policy</a>
-									<input type="checkbox">
-									<span class="checkmark"></span>
-								</label>
-							</div>
+									<select id="From" name="From" class="search_input search_input_1"  required="required" size=1>
+										<option value="CLT">Charlotte</option>
+										<option value="MIA">Miami</option>
+										<option value="NYC">New York</option>
+										<option value="PHL" selected >Philadelphia</option>
+										<option value="PWM">Portland</option>
+										<option value="SFO">San Fransico</option>
+									</select>
+									
+									<select id="To" name="To" class="search_input search_input_2"  required="required" size=1>
+										<option value="CLT">Charlotte</option>
+										<option value="MIA" selected>Miami</option>
+										<option value="NYC">New York</option>
+										<option value="PHL">Philadelphia</option>
+										<option value="PWM">Portland</option>
+										<option value="SFO">San Fransico</option>
+									</select>
+										     
+									<input id="seats" name="seats" type="Number" class="search_input search_input_3" placeholder="# Seats" required="required" value="1" min="1" max="15">
+									<input id="tdate" name="tdate" type="Date" class="search_input search_input_4" required="required" min="2019-12-01" max="2020-03-31">
+									<input id="rdate" name="rdate" type="Date" class="search_input search_input_5" min="2019-12-01" max="2020-03-31">
+									<button class="home_search_button" >search</button>
+									</div>
+																
+							</form>
 						</div>
-					</div>
-											</div>
-										</div>
-				<!-- /col -->
-										<aside class="col-xl-4 col-lg-4" id="sidebar">
-					<div class="box_general_3 booking">
-						<form>
+		</div>
+	</div>
+	
+	<div class="home_search">
+		<div class="container">
+			<div class="row">
+				<div class="col"> 
+					<div class="home_search_container">
+					
+					<!--static add -->
+					<div class="box_general booking">
+					<<form method="post" action="book.html?name=Miami&price=$132.75" id="book_form">
+							id="book_form">
 							<div class="title">
-								<h3>Your booking</h3>
-							</div>
-							<div class="summary">
-								<ul>
-									<div class="row">
-									<div class="col">
-										<li><strong>Philadelphia</strong>
+							<h3>Select a Flight</h3>
+							
+							<!-- /row -->
+							<ul class="treatments clearfix">
+								<li>
+									<div class="checkbox">
+									    <div class="d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
+											<label class="checkbox-label"><input type="checkbox"><span class="checkbox-custom"></span></label>
+											<label  class="css-label" ><strong><span style='font-size:16pt;color:green'>$110</span></strong></label>
+										</div>
+										<div class="d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
+											<label  class="css-label"><script type="text/javascript">
+											var From = getValue("From");
+											document.write(From);</script>
+											</label>
+											<label  class="css-label"><i class="fa fa-fighter-jet" aria-hidden="true"></i></label>
+											<label  class="css-label"><script type="text/javascript">
+											var To = getValue("To");
+											document.write(To);</script></label>
+											<label  class="css-label"><script type="text/javascript">
+											var tdate = getValue("tdate");
+											document.write(tdate);</script></label>
+										</div>
+										<div class="d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
+											<label  class="css-label">9:00 am</label>
+											<label  class="css-label"></label>
+											<label  class="css-label">12:05 pm</label>
+											<label  class="css-label">3h 05m</label>	
+										</div>
+										<div class="d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
+											<label  class="css-label"><script type="text/javascript">
+											var To = getValue("To");
+											document.write(To);</script></label>
+											<label  class="css-label"><i class="fa fa-fighter-jet" aria-hidden="true"></i></label>
+											<label  class="css-label"><script type="text/javascript">
+											var From = getValue("From");
+											document.write(From);</script>
+											</label>
+											<label  class="css-label"><script type="text/javascript">
+											var rdate = getValue("rdate");
+											document.write(rdate);</script></label>
+											
+										</div>
+										<div class="d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
+											<label  class="css-label">3:00 pm</label>
+											<label  class="css-label"></label>
+											<label  class="css-label">5:05 pm</label>
+											<label  class="css-label">3h 05m</label>	
+										</div>
 									</div>
-									<div class="col"><strong class="align-center">---></strong></div>
-									
-									    <div class="col"><strong class="float-right">
-										<script type="text/javascript">
-											<!-- hide
-											var name = getValue("name");
-											document.write(name);
-											// end hide -->
-										</script>
-										</strong></div>
-									</li>
+								</li>
+								<li>
+									<div class="checkbox">
+									    <div class="d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
+											<label class="checkbox-label"><input type="checkbox"><span class="checkbox-custom"></span></label>
+											<label  class="css-label" ><strong><span style='font-size:16pt;color:green'>$125</span></strong></label>
+										</div>	
+										<div class="d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
+											<label  class="css-label"><script type="text/javascript">
+											var From = getValue("From");
+											document.write(From);</script></label>
+											<label  class="css-label"><i class="fa fa-fighter-jet" aria-hidden="true"></i></label>
+											<label  class="css-label"><script type="text/javascript">
+											var To = getValue("To");
+											document.write(To);</script></label>
+											<label  class="css-label"><script type="text/javascript">
+											var tdate = getValue("tdate");
+											document.write(tdate);</script></label>
+											
+										</div>
+										<div class="d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
+											<label  class="css-label">9:00 am</label>
+											<label  class="css-label"></label>
+											<label  class="css-label">12:05 pm</label>
+											<label  class="css-label">3h 05m</label>	
+										</div>
+										<div class="d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
+											<label  class="css-label"><script type="text/javascript">
+											var To = getValue("To");
+											document.write(To);</script></label>
+											<label  class="css-label"><i class="fa fa-fighter-jet" aria-hidden="true"></i></label>
+											<label  class="css-label"><script type="text/javascript">
+											var From = getValue("From");
+											document.write(From);</script></label>
+											<label  class="css-label"><script type="text/javascript">
+											var rdate = getValue("rdate");
+											document.write(rdate);</script></label>
+											
+										</div>
+										<div class="d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
+											<label  class="css-label">10:00 am</label>
+											<label  class="css-label"></label>
+											<label  class="css-label">1:05 pm</label>
+											<label  class="css-label">3h 05m</label>	
+										</div>
 									</div>
-									
-									
-									<li></li>
-									<li>Date:<strong class="float-right"> 12/14/2019</strong></li>
-									<li></li>
-									
-								</ul>
-							</div>
-							<ul class="treatments checkout clearfix">
-								<li>Takeoff:<strong class="float-right">9:00am</strong></li>
-								<li>Land:<strong class="float-right">12:05pm</strong></li>
-								<li>#Seats <strong class="float-right">1 adult</strong></li>
-								<li class="total">Total <strong class="float-right">
-								<script type="text/javascript">
-											<!-- hide
-											var price = getValue("price");
-											document.write(price);
-											// end hide -->
-										</script>
-								</strong></li>
+								</li>
+								
 							</ul>
+							</div>
 							<hr>
-							<a href="confirm.html" class="btn_1 full-width">Confirm and pay</a>
+							<button class="home_search_button">Book Flight</button>
 						</form>
 					</div>
 					<!-- /box_general -->
-				</aside>
-				<!-- /asdide -->
-									</div>
-								</div>
-							</div>
-						</div>	
-					</div>		
-				</div>
+
+					
+					
+					
+					<!--end add -->
+					
 			</div>
-		</div>
-	</div>	
-</div>	
-</body>
-	
+		
 	<!-- Footer -->
 
 	<footer class="footer">
@@ -513,13 +450,23 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     </div>
   </div> 
 
-</ 
-div>
+<script>
+function btcheck() {
+    
+    if (document.getElementById('rt').checked) {
+        document.getElementById('rdate').style.visibility = 'visible';
+		document.getElementById('lrdt').style.visibility = 'visible';
+    }
+    else { 
+		document.getElementById('rdate').style.visibility = 'hidden';
+		document.getElementById('lrdt').style.visibility = 'hidden';
+		}
+}
+</script>
 
-<script src="js/jquery-3.2.1.min.js"></script>
-<script src="styles/bootstrap4/popper.js"></script>
-<script src="styles/bootstrap4/bootstrap.min.js"></script>
-<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
-<script src="plugins/easing/easing.js"></script>
-<script src="plugins/Isotope/isotope.pkgd.min.js"></script>
-<script src="plugins/parallax-js-master/parallax.min.js"></script>
+
+
+	
+</div>
+</body>
+</html>

@@ -1200,3 +1200,15 @@ padding-left : 16px;
 .footer_social a:hover {
        color: red;
 }
+.box_general_3 {
+  background-color: #fff;
+  padding: 30px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  border: 5px solid #e1e8ed;
+  left :600px;
+  width: 600px;
+}

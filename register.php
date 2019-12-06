@@ -127,11 +127,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 							<div class="logo"><a href="index.html"><span lang=EL style='font-size:30pt;line-height:107%;color:red'>&#931;</span>igma Airlines</a></div>
 							<nav class="main_nav">
 								<ul class="d-flex flex-row align-items-start justify-content-start">
-									<li><a href="index.html">Home</a></li>
-									<li class="active"><a href="sigmiles.html">Σigmiles</a></li>
-									<li><a href="jobs.html">Careers</a></li>
+									<li class="active"><a href="index.html">Home</a></li>
+									<li><a href="schedule.html">Flight Schedule</a></li>
+									<li><a href="sigmiles.html">Σigmiles</a></li>
+									<li><a href="careers.html">Careers</a></li>
 									<li><a href="about.html">About us</a></li>
-									<li><a href="contact.html">Contact</a></li>
+									<li><a href="contact.html">Contact</a></li>	
 								</ul>
 							</nav>
 							
@@ -160,8 +161,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 		<div class="menu_content">
 			<ul>
 				<li><a href="index.html">Home</a></li>
+				<li><a href="schedule.html">Flight Schedules</a></li>
 				<li><a href="sigmiles.html">Σigmiles</a></li>
-				<li><a href="jobs.html">Careers</a></li>
+				<li><a href="careers.html">Careers</a></li>
 				<li><a href="about.html">About us</a></li>
 				<li><a href="contact.html">Contact</a></li> 
 			</ul>
@@ -175,7 +177,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 		<div class="background_image" style="background-image:url(images/sigmilesuno.jpg)"></div>
 	</div>
 
-<body>
+<div class="box_general_3">
     <div class="wrapper">
         <h2>Sign Up</h2>
         <p>Please fill this form to create an account.</p>
@@ -209,9 +211,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <input type="submit" class="btn btn-primary" value="Submit">
                 <input type="reset" class="btn btn-default" value="Reset">
             </div>
-            <p>Already have an account? <a href="Login.html">Login here</a>.</p>
+            <p>Already have an account? <a href="#">Login here</a>.</p>
         </form>
     </div>    
-</body>
+</div>
 </div>
 </html>
